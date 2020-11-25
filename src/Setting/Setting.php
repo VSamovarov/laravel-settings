@@ -10,6 +10,10 @@ class Setting extends Model
 
     protected $table = 'settings';
 
+    protected $casts = [
+      'val' => 'array'
+    ];
+
     public function scopeGroup($query, $groupName)
     {
         return $query->whereGroup($groupName);
